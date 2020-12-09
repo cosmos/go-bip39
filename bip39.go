@@ -84,7 +84,7 @@ func NewMnemonic(entropy []byte) (string, error) {
 // suitable for creating another mnemonic.
 // An error is returned if the mnemonic is invalid.
 func MnemonicToByteArray(mnemonic string) ([]byte, error) {
-	if IsMnemonicValid(mnemonic) == false {
+	if !IsMnemonicValid(mnemonic) {
 		return nil, fmt.Errorf("Invalid mnemonic")
 	}
 	mnemonicSlice := strings.Split(mnemonic, " ")
